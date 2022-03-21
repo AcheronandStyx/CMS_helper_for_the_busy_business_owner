@@ -87,15 +87,14 @@ const menu = [
         type: 'list',
         name: 'updateEmployeeRole',
         message: 'Which role do you want to addign the selected employee?',
-        choices: [], // dynamically list the possible roles
+        choices: ['Accountant', 'HR Analyst', 'Help Desk Analyst', 'Technician', 'Service Manager'], // dynamically list the possible roles
         when(answers) { // only if Add Employee is selected
             return answers.mainMenuSelection === 'Update Emplopyee Role'
         }
     }
-
-
-
 ]
+
+module.exports = { menu }
 
 /*
 ['View All Employees',      -> seven column tbale employee_id, firstname, lastname, title, department, salary, manager
