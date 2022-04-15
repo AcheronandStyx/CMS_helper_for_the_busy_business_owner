@@ -22,4 +22,5 @@ CREATE TABLE employees (
     role_id INTEGER, -- to hold reference to employee role
     manager_id INTEGER, -- to hold reference to another employee that is the manager of the current employee (null if the employee has no manager)
     CONSTRAINT fk_role FOREIGN KEY (role_id) REFERENCES roles(job_id) ON DELETE SET NULL -- If that role is deleted the employee no longer has a listed role
+    CONSTRAINT fk_manager FOREIGN KEY (manager_id) REFERENCES employee(employee_id) ON DELETE SET NULL -- If managing employee is removed then remove their id from any direct reports line
 );
